@@ -27,6 +27,7 @@ public class FileDestination {
         
         handle?.seekToEndOfFile()
         handle?.write((message + "\n").data(using: String.Encoding.utf8)!)
+        handle?.closeFile()
     }
     
 }
