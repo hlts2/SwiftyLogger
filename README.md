@@ -1,5 +1,5 @@
 # SwiftyLogger
-SwiftyLogger is simple swift logging library
+SwiftyLogger is simple logging library for swift
 
 ### How to use
 
