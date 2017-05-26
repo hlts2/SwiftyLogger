@@ -19,6 +19,9 @@ log.warning("This is Warning Log")
 log.error("This is Error Log")
 ```
 
+your console output shown like below
+
+
 ## Optional
 
 Change showing log settigs, default is all false
