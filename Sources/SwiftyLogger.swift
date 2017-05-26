@@ -1,6 +1,6 @@
 import Foundation
 
-public final class SwiftyLogger {
+open class SwiftyLogger {
     
     private init() {}
     
@@ -8,7 +8,7 @@ public final class SwiftyLogger {
         return SwiftyLogger()
     }()
     
-    public var settings = LoggerSettings()
+    open var settings = LoggerSettings()
     
     private func logging(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
         
@@ -51,23 +51,23 @@ public final class SwiftyLogger {
         }
     }
     
-    public func verbose(message: String..., file: String = #file, line: Int = #line, function: String = #function) {
+    open func verbose(message: String..., file: String = #file, line: Int = #line, function: String = #function) {
         self.logging(lebel: .verbose, message: message, fileName: file, line: line, funcName: function)
     }
     
-    public func debug(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
+    open func debug(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
         self.logging(lebel: .debug, message: message, fileName: file, line: line, funcName: function)
     }
     
-    public func info(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
+    open func info(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
         self.logging(lebel: .info, message: message, fileName: file, line: line, funcName: function)
     }
     
-    public func warn(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
+    open func warn(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
         self.logging(lebel: .warn, message: message, fileName: file, line: line, funcName: function)
     }
     
-    public func error(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
+    open func error(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
         self.logging(lebel: .error, message: message, fileName: file, line: line, funcName: function)
     }
 }
