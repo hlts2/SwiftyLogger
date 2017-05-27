@@ -1,6 +1,8 @@
 import Foundation
 
-public class FileDestination {
+public struct FileDestination {
+    
+    private init() {}
     
     public static func generateFile(path: String, name: String) -> Bool {
         
