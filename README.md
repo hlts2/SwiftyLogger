@@ -1,7 +1,7 @@
 # SwiftyLogger
 SwiftyLogger is simple logging library for swift
 
-### How to use
+## How to use
 
 ```swift
 import SwiftyLogger
@@ -38,7 +38,7 @@ You'd like to log something into file
 log.isFileWrite = true
 ```
 
-### Requirements
+## Requirements
 Swift3.0 or latter.
 
 ## Installation
