@@ -4,7 +4,7 @@ open class SwiftyLogger {
     
     private init() {}
     
-    public static var instance: SwiftyLogger = {
+    public static let instance: SwiftyLogger = {
         return SwiftyLogger()
     }()
     
