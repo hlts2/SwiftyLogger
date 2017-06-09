@@ -10,7 +10,7 @@ open class SwiftyLogger {
     
     open var settings = LoggerSettings()
     
-    private func logging(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
+    private func loggIn(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
         
         if settings.isHidden {
             return
@@ -61,22 +61,22 @@ open class SwiftyLogger {
     }
     
     open func verbose(message: String..., file: String = #file, line: Int = #line, function: String = #function) {
-        self.logging(lebel: .verbose, message: message, fileName: file, line: line, funcName: function)
+        self.loggIn(lebel: .verbose, message: message, fileName: file, line: line, funcName: function)
     }
     
     open func debug(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
-        self.logging(lebel: .debug, message: message, fileName: file, line: line, funcName: function)
+        self.loggIn(lebel: .debug, message: message, fileName: file, line: line, funcName: function)
     }
     
     open func info(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
-        self.logging(lebel: .info, message: message, fileName: file, line: line, funcName: function)
+        self.loggIn(lebel: .info, message: message, fileName: file, line: line, funcName: function)
     }
     
     open func warn(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
-        self.logging(lebel: .warn, message: message, fileName: file, line: line, funcName: function)
+        self.loggIn(lebel: .warn, message: message, fileName: file, line: line, funcName: function)
     }
     
     open func error(message: String..., file: String = #file, line: Int = #line ,function: String = #function) {
-        self.logging(lebel: .error, message: message, fileName: file, line: line, funcName: function)
+        self.loggIn(lebel: .error, message: message, fileName: file, line: line, funcName: function)
     }
 }
