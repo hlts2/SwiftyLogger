@@ -22,20 +22,27 @@ open class SwiftyLogger {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = settings.dateFormat
             
+            //add date
             output += dateFormatter.string(from: Date()) + " "
         }
         
         output += "[" + lebel.description() + "] "
         
         if !settings.isFileNameHidden {
+            
+            //add file Name
             output += "[" + fileName.pregReplace(pattern: ".*/", with: "") + ":" + String(line) + "] "
         }
         
         if !settings.isFunctionNameHidden {
+            
+            //add function Name
             output += funcName
         }
         
         if let messages = optionalMessages {
+            
+            //add message
             output += " ▶ " + messages.joined(separator: ", ")
         }
         
@@ -44,6 +51,8 @@ open class SwiftyLogger {
             let name = settings.filePath.pregReplace(pattern: ".*/", with: "")
             
             if FileDestination.generateFile(path: path, name: name) {
+                
+                //add to file output
                 FileDestination.addMessage(filePath: settings.filePath, message: output)
             }
         } else {
