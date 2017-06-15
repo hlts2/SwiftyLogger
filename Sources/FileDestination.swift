@@ -25,11 +25,11 @@ public struct FileDestination {
     }
     
     public static func addMessage(filePath: String, message: String) {
-        let handle = FileHandle(forWritingAtPath: filePath)
-        
-        handle?.seekToEndOfFile()
-        handle?.write((message + "\n").data(using: String.Encoding.utf8)!)
-        handle?.closeFile()
+        if let handle = FileHandle(forWritingAtPath: filePath) {
+            handle.seekToEndOfFile()
+            handle.write((message + "\n").data(using: String.Encoding.utf8)!)
+            handle.closeFile()
+        }
     }
     
 }
