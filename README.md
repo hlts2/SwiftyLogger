@@ -27,9 +27,9 @@ your console output shown like below
 Change showing log settigs, default is all false
 
 ```swift
-log.isDateHidden         = false
-log.isFunctionNameHidden = false
-log.isFileNameHidden     = false
+log.isDateHidden         = true
+log.isFunctionNameHidden = true
+log.isFileNameHidden     = true
 ```
 
 You'd like to log something into file
