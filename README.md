@@ -24,18 +24,20 @@ your console output shown like below
 
 ## Optional
 
-Change showing log settigs, default is all false
+default logger settings is below.
 
 ```swift
-log.isDateHidden         = true
-log.isFunctionNameHidden = true
-log.isFileNameHidden     = true
-```
+public struct LoggerSettings {
 
-You'd like to log something into file
+    public var dateFormat           = "yyyy-MM-dd HH:mm:ss.SSS"
+    public var filePath             = "/tmp/SwiftyLogger.log"
 
-```swift
-log.isFileWrite = true
+    public var isHidden             = false
+    public var isDateHidden         = false
+    public var isFunctionNameHidden = false
+    public var isFileNameHidden     = false
+    public var isFileWrite          = false
+}
 ```
 
 ## Requirements
