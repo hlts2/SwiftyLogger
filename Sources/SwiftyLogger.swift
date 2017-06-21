@@ -12,37 +12,33 @@ open class SwiftyLogger {
     
     private func logIn(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
         
-        if settings.isHidden {
+        if settings.isLogHidden {
             return
         }
         
         var output = lebel.emojiDescription()
         
-        if !settings.isDateHidden {
+        if settings.showDate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = settings.dateFormat
             
-            //add date
             output += dateFormatter.string(from: Date()) + " "
         }
         
         output += "[" + lebel.description() + "] "
         
-        if !settings.isFileNameHidden {
+        if settings.showFileName {
             
-            //add file Name
             output += "[" + fileName.pregReplace(pattern: ".*/", with: "") + ":" + String(line) + "] "
         }
         
-        if !settings.isFunctionNameHidden {
+        if settings.showFunctionName {
             
-            //add function Name
             output += funcName
         }
         
         if let messages = optionalMessages {
             
-            //add message
             output += " ▶ " + messages.joined(separator: ", ")
         }
         
@@ -52,7 +48,6 @@ open class SwiftyLogger {
             
             if FileDestination.generateFile(path: path, name: name) {
                 
-                //add to file output
                 FileDestination.addMessage(filePath: settings.filePath, message: output)
             }
         } else {

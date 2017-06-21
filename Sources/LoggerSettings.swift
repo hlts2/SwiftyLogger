@@ -1,13 +1,12 @@
 import Foundation
 
 public struct LoggerSettings {
-    
     public var dateFormat           = "yyyy-MM-dd HH:mm:ss.SSS"
     public var filePath             = "/tmp/SwiftyLogger.log"
     
-    public var isHidden             = false
-    public var isDateHidden         = false
-    public var isFunctionNameHidden = false
-    public var isFileNameHidden     = false
+    public var isLogHidden          = false
+    public var showDate             = true
+    public var showFunctionName     = true
+    public var showFileName         = true
     public var isFileWrite          = false
 }
