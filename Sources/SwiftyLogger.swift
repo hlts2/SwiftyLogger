@@ -16,7 +16,10 @@ open class SwiftyLogger {
             return
         }
         
-        var output = lebel.emojiDescription()
+        var output = ""
+        if settings.showEmoji {
+            output += lebel.emojiDescription()
+        }
         
         if settings.showDate {
             let dateFormatter = DateFormatter()
@@ -28,27 +31,21 @@ open class SwiftyLogger {
         output += "[" + lebel.description() + "] "
         
         if settings.showFileName {
-            
             output += "[" + fileName.pregReplace(pattern: ".*/", with: "") + ":" + String(line) + "] "
         }
         
         if settings.showFunctionName {
-            
             output += funcName
         }
         
         if let messages = optionalMessages {
-            
             output += " ▶ " + messages.joined(separator: ", ")
         }
         
         if settings.isFileWrite {
-            let path = settings.filePath.pregMatch(pattern: ".*/")
-            let name = settings.filePath.pregReplace(pattern: ".*/", with: "")
             
-            if FileDestination.generateFile(path: path, name: name) {
-                
-                FileDestination.addMessage(filePath: settings.filePath, message: output)
+            if FileDestination.generateFile(path: settings.filePath) {
+                FileDestination.addMessage(path: settings.filePath, message: output)
             }
         } else {
             print(output)

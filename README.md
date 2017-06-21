@@ -32,11 +32,20 @@ public struct LoggerSettings {
     public var filePath             = "/tmp/SwiftyLogger.log"
 
     public var isLogHidden          = false
+    public var showEmoji            = true
     public var showDate             = true
     public var showFunctionName     = true
     public var showFileName         = true
     public var isFileWrite          = false
 }
+```
+
+If you'd like to change the log setting, you need to change the setting properties.
+
+```swift
+let log = SwiftyLogger.instance
+
+log.settings.isLogHidden    = true
 ```
 
 ## Requirements

@@ -5,28 +5,31 @@ public struct FileDestination {
     
     private init() {}
     
-    public static func generateFile(path: String, name: String) -> Bool {
-        
+    private enum FileDestinationError: Error {
+        case createFile
+    }
+    
+    public static func generateFile(path: String) -> Bool {
         do {
-            let fMng = FileManager.default
-            try fMng.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            let dirPath = path.pregMatch(pattern: ".*/")
             
-            if !fMng.fileExists(atPath: path + name) {
-                if !fMng.createFile(atPath: path + name, contents: nil, attributes: nil) {
-                    throw NSError()
+            let fmg = FileManager.default
+            try fmg.createDirectory(atPath: dirPath, withIntermediateDirectories: true, attributes: nil)
+            
+            if !fmg.fileExists(atPath: path) {
+                if !fmg.createFile(atPath: path, contents: nil, attributes: nil) {
+                    throw FileDestinationError.createFile
                 }
             }
-            
+        
             return true
         } catch {
-            print("\(error)")
-            
             return false
         }
     }
     
-    public static func addMessage(filePath: String, message: String) {
-        if let handle = FileHandle(forWritingAtPath: filePath) {
+    public static func addMessage(path: String, message: String) {
+        if let handle = FileHandle(forWritingAtPath: path) {
             handle.seekToEndOfFile()
             handle.write((message + "\n").data(using: String.Encoding.utf8)!)
             handle.closeFile()
