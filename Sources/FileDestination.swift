@@ -1,5 +1,6 @@
 import Foundation
 
+
 public struct FileDestination {
     
     private init() {}

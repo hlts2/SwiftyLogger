@@ -38,4 +38,19 @@ public enum LogLebel: Int {
             return "💣 💥 "
         }
     }
+    
+    public func colorDescription() -> String {
+        switch self {
+        case .verbose:
+            return ""
+        case .debug:
+            return ""
+        case .info:
+            return ""
+        case .warn:
+            return ""
+        case .error:
+            return ""
+        }
+    }
 }
