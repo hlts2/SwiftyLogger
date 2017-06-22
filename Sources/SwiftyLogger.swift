@@ -17,6 +17,7 @@ open class SwiftyLogger {
         }
         
         var output = ""
+        
         if settings.showEmoji {
             output += lebel.emojiDescription()
         }
