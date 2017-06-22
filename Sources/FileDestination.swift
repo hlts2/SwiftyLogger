@@ -1,13 +1,12 @@
 import Foundation
 
+private enum FileDestinationError: Error {
+    case createFile
+}
 
 public struct FileDestination {
     
     private init() {}
-    
-    private enum FileDestinationError: Error {
-        case createFile
-    }
     
     public static func generateFile(path: String) -> Bool {
         do {
