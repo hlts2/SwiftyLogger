@@ -2,14 +2,19 @@ import XCTest
 @testable import SwiftyLogger
 
 class SwiftyLoggerTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(SwiftyLogger().text, "Hello, World!")
+    
+    
+    func testLogger() {
+        let log = SwiftyLogger.instance
+        
+        log.debug(message: "debug test")
+        log.error(message: "error test")
+        log.info(message: "info test")
+        log.verbose(message: "verbose test")
+        log.warn(message: "warn test")
     }
 
-
     static var allTests = [
-        ("testExample", testExample),
+        ("testLogger", testLogger),
     ]
 }
