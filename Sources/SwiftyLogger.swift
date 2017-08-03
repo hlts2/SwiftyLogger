@@ -12,7 +12,7 @@ open class SwiftyLogger {
     
     private func logIn(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
         
-        if settings.isLogHidden {
+        if settings.logHidden {
             return
         }
         

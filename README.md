@@ -31,7 +31,7 @@ public struct LoggerSettings {
     public var dateFormat           = "yyyy-MM-dd HH:mm:ss.SSS"
     public var filePath             = "/tmp/SwiftyLogger.log"
 
-    public var isLogHidden          = false
+    public var logHidden            = false
     public var showEmoji            = true
     public var showDate             = true
     public var showFunctionName     = true
@@ -45,7 +45,7 @@ If you'd like to change the log setting, you need to change the setting properti
 ```swift
 let log = SwiftyLogger.instance
 
-log.settings.isLogHidden    = true
+log.settings.logHidden    = true
 ```
 
 ## Requirements
