@@ -24,7 +24,7 @@ class SwiftyLoggerTests: XCTestCase {
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
         
-        log.settings.logHidden = true
+        log.settings.logHidden = false
     }
     
     func testLoggerHideEmoji() {
