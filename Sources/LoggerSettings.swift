@@ -5,7 +5,6 @@ public struct LoggerSettings {
     public var filePath             = "/tmp/SwiftyLogger.log"
     
     public var logHidden            = false
-    public var logLebel             = false
     public var showEmoji            = true
     public var showDate             = true
     public var showFunctionName     = true
