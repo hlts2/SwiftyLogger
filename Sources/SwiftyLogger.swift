@@ -15,7 +15,7 @@ open class SwiftyLogger {
         if settings.logHidden {
             return
         }
-        
+
         var output = ""
         
         if settings.showEmoji {

@@ -4,7 +4,8 @@ public struct LoggerSettings {
     public var dateFormat           = "yyyy-MM-dd HH:mm:ss.SSS"
     public var filePath             = "/tmp/SwiftyLogger.log"
     
-    public var logHidden          = false
+    public var logHidden            = false
+    public var logLebel             = false
     public var showEmoji            = true
     public var showDate             = true
     public var showFunctionName     = true
