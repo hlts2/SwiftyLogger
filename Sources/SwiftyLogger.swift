@@ -10,7 +10,7 @@ open class SwiftyLogger {
     
     open var settings = LoggerSettings()
     
-    private func logIn(lebel: LogLebel, message optionalMessages : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
+    private func logIn(lebel: LogLebel, message : [String]?, fileName: String = #file, line: Int = #line ,funcName: String = #function) {
         
         if settings.logHidden {
             return
@@ -39,12 +39,11 @@ open class SwiftyLogger {
             output += funcName
         }
         
-        if let messages = optionalMessages {
+        if let messages = message {
             output += " ▶ " + messages.joined(separator: ", ")
         }
         
         if settings.isFileWrite {
-            
             if FileDestination.generateFile(path: settings.filePath) {
                 FileDestination.addMessage(path: settings.filePath, message: output)
             }

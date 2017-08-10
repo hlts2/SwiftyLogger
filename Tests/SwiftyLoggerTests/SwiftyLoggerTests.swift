@@ -17,13 +17,11 @@ class SwiftyLoggerTests: XCTestCase {
         print("Hide Log")
         
         log.settings.logHidden = true
-        
         log.debug(message: "debug test")
         log.error(message: "error test")
         log.info(message: "info test")
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
-        
         log.settings.logHidden = false
     }
     
@@ -31,13 +29,11 @@ class SwiftyLoggerTests: XCTestCase {
         print("Hide Emoji")
         
         log.settings.showEmoji = false
-        
         log.debug(message: "debug test")
         log.error(message: "error test")
         log.info(message: "info test")
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
-        
         log.settings.showEmoji = true
     }
     
@@ -45,41 +41,34 @@ class SwiftyLoggerTests: XCTestCase {
         print("Hide Date")
         
         log.settings.showDate = false
-        
         log.debug(message: "debug test")
         log.error(message: "error test")
         log.info(message: "info test")
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
-        
-         log.settings.showDate = true
+        log.settings.showDate = true
     }
     
     func testLoggerHideFileName() {
         print("Hide File Name")
         
         log.settings.showFileName = false
-        
         log.debug(message: "debug test")
         log.error(message: "error test")
         log.info(message: "info test")
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
-        
         log.settings.showFileName = true
     }
     
     func testLoggerHideFunctionName() {
         print("Hide Function Name")
         
-        log.settings.showFunctionName = false
-        
         log.debug(message: "debug test")
         log.error(message: "error test")
         log.info(message: "info test")
         log.verbose(message: "verbose test")
         log.warn(message: "warn test")
-        
         log.settings.showFunctionName = true
     }
 
